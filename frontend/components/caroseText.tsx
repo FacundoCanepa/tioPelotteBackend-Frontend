@@ -40,13 +40,7 @@
         const router = useRouter();
                         return (
                     <div>
-                      <Carousel
-                        options={{
-                                loop: false,
-                                 speed: 1   // valor por defecto ~10; prueba con 4–6 para un scroll más suave
-                                 }}
-                             plugins={[ Autoplay({ delay: 3000}) ]}
-                            className="w-full max-w-[100vw] mx-auto "
+                      <Carousel plugins={[ Autoplay({ delay: 2500}) ]} className="w-full max-w-[100vw] mx-auto "
                     > <CarouselContent>
                     {datacaroseltop.map(({id,title ,img , link ,description}) => (
                     <CarouselItem className="cursor-pointer" key={id} onClick={() => router.push(link)}>

@@ -136,6 +136,9 @@
   font-family: var(--font-garamond);
 }
 
+.fondo {
+  background-color: var( --background);
+}
 .navbar-secondary {
   background-color: var(--secondary);
 }
