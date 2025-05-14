@@ -2,6 +2,7 @@ export type ProductType = {
   id: number;
   productName: string;
   slug: string;
+  descriptionCorta: string;
   description: string;
   unidadMedida: string;
   taste: string;
