@@ -11,13 +11,13 @@ export const googleReviews = [
     rating: 4,
     date: "hace 1 mes",
     comment: "Buena atención y productos de calidad. Volveré pronto.",
-    avatar: "/img/user2.jpg"
+    avatar: "/uploads/unnamed_96de2ece74.png"
   },
   {
     name: "Lucía Fernández",
     rating: 5,
     date: "hace 3 días",
     comment: "Los ravioles de verdura son los mejores que he probado.",
-    avatar: "/img/user3.jpg"
+    avatar: "/uploads/unnamed_96de2ece74.png"
   },
 ]

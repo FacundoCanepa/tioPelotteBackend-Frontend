@@ -9,7 +9,7 @@
         id: 1,
         title: "Pastas caseras todos los días",
         description: "Frescas, artesanales y con ingredientes de primera calidad.",
-        img: "/img/photo-1465911817134-741b5e473a1b.avif", // cambiá esto por la ruta real de tu imagen
+        img: "/img/photo-1465911817134-741b5e473a1b.avif", 
         link: "/productos"
         },
         {
@@ -40,7 +40,7 @@
         const router = useRouter();
                         return (
                     <div>
-                      <Carousel plugins={[ Autoplay({ delay: 2500}) ]} className="w-full max-w-[100vw] mx-auto "
+                      <Carousel plugins={[ Autoplay({ delay: 2500}) ]} className="w-full max-w-[100vw] mx-auto pointer-events-none"
                     > <CarouselContent>
                     {datacaroseltop.map(({id,title ,img , link ,description}) => (
                     <CarouselItem className="cursor-pointer" key={id} onClick={() => router.push(link)}>

@@ -16,7 +16,7 @@ const MenuList = () => {
         <div
           key={text}
           onClick={() => router.push(href)}
-          className="w-[60vw] md:w-[20vw] border-b-2 border-black/20 flex justify-center cursor-pointer"
+          className="w-[60vw] md:w-[20vw] border-b-2 border-black/20 flex justify-center cursor-pointer hover:underline"
         >
           <span className="text-[6vw] md:text-[2vw] select-none ">{text}</span>
         </div>

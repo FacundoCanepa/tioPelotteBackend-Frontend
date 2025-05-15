@@ -4,6 +4,7 @@ import FeaturedProducts from './../components/featuredProducts';
 import CommentsUser from './../components/commentsUsers';
 import NuestraHistoria from '@/components/nuestraHistoria';
 import Ubicacion from '@/components/ubicacion';
+import RedesSociales from '@/components/redesSociales';
 
 export default function Home() {
 
@@ -11,9 +12,10 @@ export default function Home() {
     <div>
       <CaroseText/>
       <FeaturedProducts/>
-      <CommentsUser/>
       <NuestraHistoria/>
       <Ubicacion/>
+      <CommentsUser/>
+      <RedesSociales/>
     </div>
   )
 } 

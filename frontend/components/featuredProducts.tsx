@@ -21,7 +21,7 @@ const FeaturedProducts = () => {
         </h3>
       </div>
 
-      <Carousel className="mt-4 lg:ml-40 lg:mr-40">
+      <Carousel className="mt-4 xl:ml-40 xl:mr-40">
         <CarouselContent className="ml-0">
           {loading && <SkeletonSchema grid={4} />}
           {result !== null &&
@@ -45,7 +45,7 @@ const FeaturedProducts = () => {
                       {product.descriptionCorta}
 
                     </span>
-                    <button className="bg-white/50 hover:bg-white text-black py-1 px-4 rounded-full shadow-md transition mt-auto"  onClick={() => router.push(`/productos/${product.slug}`)}
+                    <button className="bg-white/50 hover:bg-white text-black py-1 px-4  hover:scale-105  rounded-full shadow-md transition mt-auto cursor-pointer"  onClick={() => router.push(`/productos/${product.slug}`)}
 >
                       VER MÁS
                     </button>
@@ -54,8 +54,8 @@ const FeaturedProducts = () => {
               </CarouselItem>
             ))}
         </CarouselContent>
-        <CarouselPrevious  className="hidden md:flex"/>
-        <CarouselNext className="hidden md:flex" />
+        <CarouselPrevious  className="hidden md:flex cursor-pointer" />
+        <CarouselNext className="hidden md:flex cursor-pointer" />
       </Carousel>
     </div>
   );
