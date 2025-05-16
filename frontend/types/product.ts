@@ -2,13 +2,8 @@ export type ProductType = {
   id: number;
   productName: string;
   slug: string;
-  descriptionCorta: string;
   description: string;
-  unidadMedida: string;
-  taste: string;
-  price: number;
-  active: boolean;
-  isFeatured: boolean;
+  descriptionCorta: string | null;
   img: {
     data: {
       id: number;
@@ -16,7 +11,13 @@ export type ProductType = {
         url: string;
       };
     }[];
-  };
+  } | null;
+  unidadMedida: string;
+  taste: string;
+  price: number;
+  active: boolean;
+  isFeatured: boolean | null;
+  isOffer: boolean | null;
   category: {
     id: number;
     categoryNames: string;
