@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+
 @custom-variant dark (&:is(.dark *));
 /* @theme inline {
   --color-background: var(--background);
@@ -148,10 +149,26 @@
 
 body {
   overflow-y: scroll;
-  scrollbar-width: none;   /* Firefox */
+  scrollbar-width: none;   
 }
 
 body::-webkit-scrollbar {
-  display: none;  /* Chrome, Safari, Opera */
+  display: none; 
 }
 
+@layer utilities {
+  @keyframes slide-down {
+    0% {
+      transform: translateY(-1rem);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .animate-slide-down {
+    animation: slide-down 0.3s ease-out;
+  }
+}

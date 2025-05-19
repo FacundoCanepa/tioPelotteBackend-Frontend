@@ -19,7 +19,7 @@ export default function Navbar() {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <header className="w-full flex items-center justify-between py-3 md:py-0 md:pl-5 md:pr-5 shadow-md relative z-50 navbar-secondary">
+    <header className="w-full flex items-center justify-between py-3 md:py-0 md:pl-5 md:pr-5 shadow-md relative z-50 navbar-secondary   ">
       <div  className=" hidden md:flex size-[6vw] ">
         <img src="/favicon.ico" alt="Tio Pelotte Icon" />
       </div> 
@@ -37,9 +37,8 @@ export default function Navbar() {
           <UserRound className="w-[7vw] h-[7vw] md:w-[2vw] md:h-[2vw] cursor-pointer" onClick={() => router.push ("/login")}/>
         </button>
       </div>
-      {isOpen && (
-        <MenuList/>
-      )}
+   {isOpen && <MenuList />}
+
     </header>
   )
 }
