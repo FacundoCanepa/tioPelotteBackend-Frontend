@@ -6,6 +6,7 @@ import Ubicacion from "../components/sections/ubicacion";
 import DessertProducts from "../components/sections/dessertProducts";
 import CommentsUser from "../components/sections/commentsUsers";
 import RedesSociales from "../components/sections/redesSociales";
+import CategoryHome from "@/components/sections/categoryHome";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <Ubicacion />
       <DessertProducts />
       <CommentsUser />
+      <CategoryHome/>
       <RedesSociales />
     </div>
   );

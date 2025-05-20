@@ -42,7 +42,7 @@ const CommentsUser = () => {
               <img
                 src={`${process.env.NEXT_PUBLIC_BACKEND_URL}${review.avatar}`}
                 alt={review.name}
-                className="w-12 h-12 rounded-full object-cover border-2 border-yellow-300"
+                className="w-12 h-12 rounded-full object-cover border-2 border-black/90"
               />
               <div className="flex-1">
                 <div className="flex items-center justify-between">

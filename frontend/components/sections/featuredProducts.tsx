@@ -2,60 +2,52 @@
 
 import { useGetFeaturedProducts } from "@/api/useGetFeaturedProducts";
 import { ResponseType } from "@/types/response";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "../ui/carousel";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "../ui/carousel";
 import SkeletonSchema from "../ui/skeletonSchema";
 import { ProductType } from "@/types/product";
-import { CardContent, Card } from "../ui/card";
-import { useRouter } from "next/navigation";
 import AnimatedSection from "../ui/AnimatedWrapper";
+import FeaturedProductCard from "../carosel/FeaturedProductCard";
 
 const FeaturedProducts = () => {
   const { error, loading, result }: ResponseType = useGetFeaturedProducts();
-  const router = useRouter();
 
   return (
     <AnimatedSection>
-      <div className="max-w-5x1 md:max-w py-4 mx-auto sm:py-8 sm:px-12">
-        <div className="flex justify-center">
-          <h3 className="font-garamond text-[4vh] md:text-[6vh] sm:pb-4 italic tracking-wide border-b-2 border-dashed border-black/50 md:border-0">
-            Productos destacados
-          </h3>
+      <div className="max-w-5xl md:max-w-full py-4 mx-auto sm:py-8 sm:px-12">
+        <div className="max-w-6xl mx-auto px-4 sm:px-8 pt-10 pb-4">
+          <div className="text-center">
+            <h3 className="font-garamond text-[4vh] md:text-[6vh] italic tracking-wide">
+              Sabores que brillan
+            </h3>
+            <p className="text-stone-600 italic font-garamond text-lg mt-1">
+              Los elegidos de la semana
+            </p>
+            <div className="inline-block mt-3 bg-[#FFD966] text-[#8B4513] font-semibold px-4 py-1 rounded-full shadow-sm text-xs sm:text-sm uppercase tracking-wide">
+              ¡Novedades fresquitas!
+            </div>
+          </div>
         </div>
 
-        <Carousel className="mt-4 xl:ml-40 xl:mr-40">
-          <CarouselContent className="ml-0 flex justify-around">
+        <Carousel className="mt-4 xl:mx-40">
+          <CarouselContent className="ml-0 flex justify-start gap-4 overflow-visible">
             {loading && <SkeletonSchema grid={4} />}
             {result !== null &&
               result.map((product: ProductType) => (
                 <CarouselItem
                   key={product.id}
-                  className="basis-[85%] sm:basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5 p-2"
+                  className="flex-shrink-0 basis-[85%] sm:basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5 p-2"
                 >
-                  <Card className="relative w-full h-full bg-transparent border-none overflow-hidden">
-                    <div className="absolute inset-0 bg-white/30 backdrop-blur-2xl z-0 rounded-xl" />
-                    <CardContent className="relative z-10 flex flex-col items-center text-center gap-3 p-4 h-full">
-                      <img
-                        src={`${process.env.NEXT_PUBLIC_BACKEND_URL}${product.img?.[0]?.url}`}
-                        alt={product.productName}
-                        className="w-full h-40 md:h-48 object-cover rounded-xl shadow-md"
-                      />
-                      <h1 className="text-sm font-semibold lowercase font-garamond line-clamp-1">
-                        {product.productName}
-                      </h1>
-                      <span className="text-xs font-garamond line-clamp-2">
-                        {product.descriptionCorta}
-                      </span>
-                      <button
-                        className="bg-white/50 hover:bg-white text-black py-1 px-4 hover:scale-105 rounded-full shadow-md transition mt-auto cursor-pointer"
-                        onClick={() => router.push(`/productos/${product.slug}`)}
-                      >
-                        VER MÁS
-                      </button>
-                    </CardContent>
-                  </Card>
+                  <FeaturedProductCard product={product} />
                 </CarouselItem>
               ))}
           </CarouselContent>
+
           <CarouselPrevious className="hidden md:flex cursor-pointer" />
           <CarouselNext className="hidden md:flex cursor-pointer" />
         </Carousel>

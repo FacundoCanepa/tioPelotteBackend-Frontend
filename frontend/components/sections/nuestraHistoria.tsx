@@ -1,8 +1,10 @@
 "use client";
 
 import AnimatedSection from "../ui/AnimatedWrapper";
+import { useRouter } from "next/navigation";
 
 const NuestraHistoria = () => {
+  const router = useRouter();
   return (
     <AnimatedSection className="relative py-16 overflow-hidden">
       {/* Imagen de fondo decorativa */}
@@ -32,7 +34,7 @@ const NuestraHistoria = () => {
             cada creación está llena de amor y dedicación.
           </p>
         <div className="pt-5">
-          <button className=" cursor-pointer navbar-secondary font-garamond text-stone-900 font-semibold py-2 px-6 rounded-full shadow-md border border-amber-300 hover:scale-105 transition-all">
+          <button  onClick={() => router.push(`/historia`)} className=" cursor-pointer navbar-secondary font-garamond text-stone-900 font-semibold py-2 px-6 rounded-full shadow-md border border-amber-300 hover:scale-105 transition-all">
             ver más
           </button>
         </div>

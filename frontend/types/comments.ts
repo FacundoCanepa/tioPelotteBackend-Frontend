@@ -20,4 +20,5 @@ export const googleReviews = [
     comment: "Los ravioles de verdura son los mejores que he probado.",
     avatar: "/uploads/unnamed_96de2ece74.png"
   },
+  
 ]
