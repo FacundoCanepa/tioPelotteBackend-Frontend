@@ -3,17 +3,14 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { ZoomIn, ZoomOut } from "lucide-react";
-import { Card, CardContent } from "../ui/card";
+import { Card, CardContent } from "@/components/ui/card";
+import { ProductType } from "@/types/product";
 
-type ProductType = {
-  id: number;
-  productName: string;
-  descriptionCorta: string;
-  slug: string;
-  img?: { url: string }[];
-};
+interface Props {
+  product: ProductType;
+}
 
-const FeaturedProductCard = ({ product }: { product: ProductType }) => {
+const DessertProductCard = ({ product }: Props) => {
   const router = useRouter();
   const [expanded, setExpanded] = useState(false);
 
@@ -29,14 +26,12 @@ const FeaturedProductCard = ({ product }: { product: ProductType }) => {
       <div className="absolute inset-0 bg-white/30 backdrop-blur-2xl z-0 rounded-xl" />
 
       <CardContent className="relative z-10 flex flex-col items-center text-center gap-4 p-3 md:p-4 h-full">
-        {/* Contenedor de imagen */}
+        {/* Imagen con expansión en mobile */}
         <div
-          className={`
-            relative w-full overflow-hidden rounded-xl shadow-lg cursor-pointer transition-all duration-300
+          className={`relative w-full overflow-hidden rounded-xl shadow-lg cursor-pointer transition-all duration-300
             h-[15rem] md:h-[17rem]
             ${expanded ? "h-[22rem]" : ""}
-            md:cursor-default md:transition-none
-          `}
+            md:cursor-default md:transition-none`}
           onClick={handleImageClick}
         >
           <img
@@ -44,19 +39,12 @@ const FeaturedProductCard = ({ product }: { product: ProductType }) => {
             alt={product.productName}
             className="w-full h-full object-cover rounded-xl transition-all duration-300"
           />
-
-          {/* Íconos: ZoomIn o ZoomOut solo en mobile */}
+          {/* Ícono de zoom solo en mobile */}
           <div className="absolute top-2 right-2 md:hidden">
             {expanded ? (
-              <ZoomOut
-                className="w-6 h-6 text-white drop-shadow"
-                strokeWidth={2.2}
-              />
+              <ZoomOut className="w-6 h-6 text-white drop-shadow" strokeWidth={2.2} />
             ) : (
-              <ZoomIn
-                className="w-6 h-6 text-white drop-shadow"
-                strokeWidth={2.2}
-              />
+              <ZoomIn className="w-6 h-6 text-white drop-shadow" strokeWidth={2.2} />
             )}
           </div>
         </div>
@@ -79,4 +67,4 @@ const FeaturedProductCard = ({ product }: { product: ProductType }) => {
   );
 };
 
-export default FeaturedProductCard;
+export default DessertProductCard;

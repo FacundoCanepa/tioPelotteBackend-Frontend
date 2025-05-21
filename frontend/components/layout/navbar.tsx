@@ -22,7 +22,7 @@ export default function Navbar() {
         </span>
       </div>
       <div className="flex items-center space-x-3 md:space-x-10 md:pr-5">
-        <button onClick={toggleMenu}>
+        <button className="cursor-pointer" onClick={toggleMenu}>
           {isOpen ? (
             <X className="w-[7vw] h-[7vw] md:w-[2vw] md:h-[2vw]" />
           ) : (
